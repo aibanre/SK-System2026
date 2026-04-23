@@ -1,0 +1,235 @@
+﻿<Window x:Class="SK_System.Attendance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SK_System"
+        mc:Ignorable="d"
+        Title="Attendance" Height="768" Width="1024"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Segoe UI"
+        Background="#F9FAFB">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="#F3F4F6" BorderBrush="#E5E7EB" BorderThickness="0,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Sidebar Header -->
+                <StackPanel Grid.Row="0" Margin="20,20,20,10">
+                    <TextBlock Text="SK Management" FontSize="18" FontWeight="SemiBold" Foreground="#1F2937" />
+                    <TextBlock Text="Barangay System" FontSize="13" Foreground="#9CA3AF" Margin="0,2,0,0" />
+                </StackPanel>
+
+                <Border Grid.Row="1" BorderBrush="#E5E7EB" BorderThickness="0,1,0,1" Margin="0,10,0,0" Padding="20,15">
+                    <Border Background="#374151" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
+                        <TextBlock Text="SK Chairperson" Foreground="White" FontSize="12" FontWeight="SemiBold" />
+                    </Border>
+                </Border>
+
+                <!-- Navigation Links -->
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                    <StackPanel>
+                        <!-- Dashboard -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 3 3 L 10 3 L 10 10 L 3 10 Z M 14 3 L 21 3 L 21 10 L 14 10 Z M 3 14 L 10 14 L 10 21 L 3 21 Z M 14 14 L 21 14 L 21 21 L 14 21 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Dashboard" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- User Management -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 12 12 C 14.21 12 16 10.21 16 8 C 16 5.79 14.21 4 12 4 C 9.79 4 8 5.79 8 8 C 8 10.21 9.79 12 12 12 Z M 12 14 C 9.33 14 4 15.34 4 18 L 4 20 L 20 20 L 20 18 C 20 15.34 14.67 14 12 14 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="User Management" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Youth Management -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 16 11 C 17.66 11 18.99 9.66 18.99 8 C 18.99 6.34 17.66 5 16 5 C 14.34 5 13 6.34 13 8 C 13 9.66 14.34 11 16 11 Z M 8 11 C 9.66 11 10.99 9.66 10.99 8 C 10.99 6.34 9.66 5 8 5 C 6.34 5 5 6.34 5 8 C 5 9.66 6.34 11 8 11 Z M 8 13 C 5.67 13 1 14.17 1 16.5 L 1 19 L 15 19 L 15 16.5 C 15 14.17 10.33 13 8 13 Z M 16 13 C 15.71 13 15.38 13.02 15.03 13.05 C 16.19 13.89 17 15.02 17 16.5 L 17 19 L 23 19 L 23 16.5 C 23 14.17 18.33 13 16 13 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Youth Management" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Events -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 19 3 L 18 3 L 18 1 L 16 1 L 16 3 L 8 3 L 8 1 L 6 1 L 6 3 L 5 3 C 3.89 3 3.01 3.9 3.01 5 L 3 19 C 3 20.1 3.89 21 5 21 L 19 21 C 20.1 21 21 20.1 21 19 L 21 5 C 21 3.9 20.1 3 19 3 Z M 19 19 L 5 19 L 5 8 L 19 8 L 19 19 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Events" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Attendance (Active) -->
+                        <Border Background="#E5E7EB" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 19 3 L 5 3 C 3.9 3 3 3.9 3 5 L 3 19 C 3 20.1 3.9 21 5 21 L 19 21 C 20.1 21 21 20.1 21 19 L 21 5 C 21 3.9 20.1 3 19 3 Z M 19 19 L 5 19 L 5 5 L 19 5 L 19 19 Z M 16.5 12.5 L 18 11 L 12 5 L 6 11 L 7.5 12.5 L 11 9 L 11 17 L 13 17 L 13 9 L 16.5 12.5 Z" Fill="#1F2937" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Attendance" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Financial Approval -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 19 3 L 5 3 C 3.9 3 3 3.9 3 5 L 3 19 C 3 20.1 3.9 21 5 21 L 19 21 C 20.1 21 21 20.1 21 19 L 21 5 C 21 3.9 20.1 3 19 3 Z M 19 19 L 5 19 L 5 5 L 19 5 L 19 19 Z M 10 17 L 6 13 L 7.41 11.59 L 10 14.17 L 16.59 7.58 L 18 9 L 10 17 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Financial Approval" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Reports -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 14 2 L 6 2 C 4.9 2 4 2.9 4 4 L 4 20 C 4 21.1 4.9 22 6 22 L 18 22 C 19.1 22 20 21.1 20 20 L 20 8 L 14 2 Z M 13 9 L 13 3.5 L 18.5 9 L 13 9 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Reports" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Reconciliation -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 12 2 C 6.48 2 2 6.48 2 12 C 2 17.52 6.48 22 12 22 C 17.52 22 22 17.52 22 12 C 22 6.48 17.52 2 12 2 Z M 12 20 C 7.59 20 4 16.41 4 12 C 4 7.59 7.59 4 12 4 C 16.41 4 20 7.59 20 12 C 20 16.41 16.41 20 12 20 Z M 9.29 16.29 L 5.71 12.71 L 7.12 11.29 L 9.29 13.46 L 16.88 5.88 L 18.29 7.29 L 9.29 16.29 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Reconciliation" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Audit Trail -->
+                        <Border Padding="20,12" Cursor="Hand" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 12 1 L 3 5 L 3 11 C 3 16.55 6.84 21.74 12 23 C 17.16 21.74 21 16.55 21 11 L 21 5 L 12 1 Z M 12 20.93 C 8.25 19.82 5 15.65 5 11 L 5 6.3 L 12 3.19 L 19 6.3 L 19 11 C 19 15.65 15.75 19.82 12 20.93 Z M 16.59 7.58 L 10 14.17 L 7.41 11.59 L 6 13 L 10 17 L 18 9 L 16.59 7.58 Z" Fill="#6B7280" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="Audit Trail" FontSize="14" Foreground="#4B5563" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- Footer Version -->
+                <Border Grid.Row="3" BorderBrush="#E5E7EB" BorderThickness="0,1,0,0" Padding="20,15">
+                    <TextBlock Text="v1.0.0 · 2026" FontSize="12" Foreground="#9CA3AF" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Topbar -->
+            <Border Grid.Row="0" Background="White" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="20,15">
+                <Grid>
+                    <TextBlock Text="Barangay SK Management System" FontSize="16" FontWeight="SemiBold" Foreground="#4B5563" VerticalAlignment="Center" />
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <!-- User Info -->
+                        <Border Background="#F3F4F6" CornerRadius="4" Padding="6" Margin="0,0,10,0">
+                            <Path Data="M 12 12 C 14.21 12 16 10.21 16 8 C 16 5.79 14.21 4 12 4 C 9.79 4 8 5.79 8 8 C 8 10.21 9.79 12 12 12 Z M 12 14 C 9.33 14 4 15.34 4 18 L 4 20 L 20 20 L 20 18 C 20 15.34 14.67 14 12 14 Z" Fill="#9CA3AF" Width="18" Height="18" Stretch="Uniform" />
+                        </Border>
+                        <StackPanel Margin="0,0,15,0" VerticalAlignment="Center">
+                            <TextBlock Text="SK Chairperson" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
+                            <TextBlock Text="SK Chairperson" FontSize="12" Foreground="#9CA3AF" HorizontalAlignment="Right" />
+                        </StackPanel>
+
+                        <Border BorderBrush="#E5E7EB" BorderThickness="1,0,0,0" Margin="5,4,15,4" />
+
+                        <Button Background="White" BorderBrush="#D1D5DB" BorderThickness="1" Padding="12,6" Cursor="Hand" VerticalAlignment="Center">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 17 7 L 15.59 8.41 L 18.17 11 L 8 11 L 8 13 L 18.17 13 L 15.59 15.58 L 17 17 L 22 12 L 17 7 Z M 4 5 L 12 5 L 12 3 L 4 3 C 2.9 3 2 3.9 2 5 L 2 19 C 2 20.1 2.9 21 4 21 L 12 21 L 12 19 L 4 19 L 4 5 Z" Fill="#6B7280" Width="14" Height="14" Stretch="Uniform" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="Logout" Foreground="#4B5563" FontSize="13" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Content Area -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="24">
+
+                    <!-- Header -->
+                    <Grid Margin="0,0,0,24">
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Attendance" FontSize="20" FontWeight="SemiBold" Foreground="#1F2937" />
+                            <TextBlock Text="View-only access — attendance is recorded by the SK Secretary" FontSize="13" Foreground="#9CA3AF" Margin="0,4,0,0" />
+                        </StackPanel>
+
+                        <!-- View Only Badge -->
+                        <Border Background="#F9FAFB" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="4" Padding="12,6" HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 12 17 C 10.9 17 10 16.1 10 15 C 10 13.9 10.9 13 12 13 C 13.1 13 14 13.9 14 15 C 14 16.1 13.1 17 12 17 Z M 18 8 L 18 7 C 18 3.69 15.31 1 12 1 C 8.69 1 6 3.69 6 7 L 6 8 C 4.9 8 4 8.9 4 10 L 4 20 C 4 21.1 4.9 22 6 22 L 18 22 C 19.1 22 20 21.1 20 20 L 20 10 C 20 8.9 19.1 8 18 8 Z M 8.9 8 L 8.9 7 C 8.9 5.29 10.29 3.9 12 3.9 C 13.71 3.9 15.1 5.29 15.1 7 L 15.1 8 L 8.9 8 Z" Fill="#D1D5DB" Width="12" Height="12" Stretch="Uniform" Margin="0,0,6,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="View Only" FontSize="12" Foreground="#9CA3AF" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <!-- Search Filter & Status Summary Bar -->
+                    <Grid Margin="0,0,0,24">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="Event:" Foreground="#9CA3AF" FontSize="14" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                            <!-- Combo Box Simulation -->
+                            <Border Background="White" BorderBrush="#D1D5DB" BorderThickness="1" CornerRadius="4" Width="240" Height="40">
+                                <!-- Could add a dummy combo box or just simple border, mockup shows an empty border mimicking a combobox -->
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#6B7280" Margin="0,0,6,0" VerticalAlignment="Center" />
+                            <TextBlock Text="Present:" Foreground="#6B7280" FontSize="13" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <TextBlock Text="4" Foreground="#1F2937" FontWeight="SemiBold" FontSize="13" VerticalAlignment="Center" Margin="0,0,16,0"/>
+
+                            <Ellipse Width="8" Height="8" Fill="#D1D5DB" Margin="0,0,6,0" VerticalAlignment="Center" />
+                            <TextBlock Text="Absent:" Foreground="#6B7280" FontSize="13" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <TextBlock Text="3" Foreground="#1F2937" FontWeight="SemiBold" FontSize="13" VerticalAlignment="Center" Margin="0,0,16,0"/>
+
+                            <TextBlock Text="|" Foreground="#D1D5DB" FontSize="14" VerticalAlignment="Center" Margin="0,0,16,0"/>
+
+                            <TextBlock Text="Rate:" Foreground="#6B7280" FontSize="13" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <TextBlock Text="57%" Foreground="#1F2937" FontWeight="SemiBold" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Main Attendance Record Container -->
+                    <Border Background="White" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="4">
+                        <StackPanel>
+                            <!-- Header Sub-Label -->
+                            <Border BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="20,16" Background="#F9FAFB" CornerRadius="4,4,0,0">
+                                <TextBlock Text="Attendance Record — Youth Leadership Summit" FontSize="13" Foreground="#6B7280" />
+                            </Border>
+
+                            <!-- Table Layout Placeholder representing the list -->
+                            <DataGrid Height="480" AutoGenerateColumns="False" HeadersVisibility="Column" 
+                                      Background="White" BorderThickness="0" RowBackground="White" 
+                                      GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#F3F4F6">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="#" Width="60" />
+                                    <DataGridTextColumn Header="Youth Member" Width="*" />
+                                    <DataGridTextColumn Header="Status" Width="100" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
