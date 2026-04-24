@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SK_System"
         mc:Ignorable="d"
-        Title="Reconciliation" Height="800" Width="1200"
+        Title="Reconciliation" Height="768" Width="1366"
         WindowStartupLocation="CenterScreen"
         FontFamily="Segoe UI"
         Background="#F9FAFB">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DataGridStyles.xaml"/>
+                <ResourceDictionary Source="WindowTemplateStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,7 +42,7 @@
                 </StackPanel>
 
                 <Border Grid.Row="1" BorderBrush="#E5E7EB" BorderThickness="0,1,0,1" Margin="0,10,0,0" Padding="20,15">
-                    <Border Background="#374151" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
+                    <Border Background="#FF002B6F" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
                         <TextBlock Text="SK Chairperson" Foreground="White" FontSize="12" FontWeight="SemiBold" />
                     </Border>
                 </Border>
@@ -98,7 +107,7 @@
                         </Border>
 
                         <!-- Reconciliation (Active) -->
-                        <Border Background="#E5E7EB" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
+                        <Border Background="#FFA4BEF1" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
                             <StackPanel Orientation="Horizontal">
                                 <Path Data="M 12 2 C 6.48 2 2 6.48 2 12 C 2 17.52 6.48 22 12 22 C 17.52 22 22 17.52 22 12 C 22 6.48 17.52 2 12 2 Z M 12 20 C 7.59 20 4 16.41 4 12 C 4 7.59 7.59 4 12 4 C 16.41 4 20 7.59 20 12 C 20 16.41 16.41 20 12 20 Z M 9.29 16.29 L 5.71 12.71 L 7.12 11.29 L 9.29 13.46 L 16.88 5.88 L 18.29 7.29 L 9.29 16.29 Z" Fill="#1F2937" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
                                 <TextBlock Text="Reconciliation" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" VerticalAlignment="Center" />
@@ -132,19 +141,12 @@
             <!-- Topbar -->
             <Border Grid.Row="0" Background="White" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="20,15">
                 <Grid>
-                    <TextBlock Text="Barangay SK Management System" FontSize="16" FontWeight="SemiBold" Foreground="#4B5563" VerticalAlignment="Center" />
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!-- User Info -->
-                        <Border Background="#F3F4F6" CornerRadius="4" Padding="6" Margin="0,0,10,0">
-                            <Path Data="M 12 12 C 14.21 12 16 10.21 16 8 C 16 5.79 14.21 4 12 4 C 9.79 4 8 5.79 8 8 C 8 10.21 9.79 12 12 12 Z M 12 14 C 9.33 14 4 15.34 4 18 L 4 20 L 20 20 L 20 18 C 20 15.34 14.67 14 12 14 Z" Fill="#9CA3AF" Width="18" Height="18" Stretch="Uniform" />
-                        </Border>
                         <StackPanel Margin="0,0,15,0" VerticalAlignment="Center">
-                            <TextBlock Text="SK Chairperson" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
+                            <TextBlock Text="Lastname, Name" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
                             <TextBlock Text="SK Chairperson" FontSize="12" Foreground="#9CA3AF" HorizontalAlignment="Right" />
                         </StackPanel>
-
-                        <Border BorderBrush="#E5E7EB" BorderThickness="1,0,0,0" Margin="5,4,15,4" />
 
                         <Button Background="White" BorderBrush="#D1D5DB" BorderThickness="1" Padding="12,6" Cursor="Hand" VerticalAlignment="Center">
                             <Button.Resources>

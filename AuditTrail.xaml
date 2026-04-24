@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SK_System"
         mc:Ignorable="d"
-        Title="Audit Trail" Height="800" Width="1024"
+        Title="Audit Trail" Height="768" Width="1366"
         WindowStartupLocation="CenterScreen"
         FontFamily="Segoe UI"
         Background="#F9FAFB">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DataGridStyles.xaml"/>
+                <ResourceDictionary Source="WindowTemplateStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,7 +42,7 @@
                 </StackPanel>
 
                 <Border Grid.Row="1" BorderBrush="#E5E7EB" BorderThickness="0,1,0,1" Margin="0,10,0,0" Padding="20,15">
-                    <Border Background="#374151" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
+                    <Border Background="#FF002B6F" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
                         <TextBlock Text="SK Chairperson" Foreground="White" FontSize="12" FontWeight="SemiBold" />
                     </Border>
                 </Border>
@@ -106,7 +115,7 @@
                         </Border>
 
                         <!-- Audit Trail (Active) -->
-                        <Border Background="#E5E7EB" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
+                        <Border Background="#FFA4BEF1" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
                             <StackPanel Orientation="Horizontal">
                                 <Path Data="M 12 1 L 3 5 L 3 11 C 3 16.55 6.84 21.74 12 23 C 17.16 21.74 21 16.55 21 11 L 21 5 L 12 1 Z M 12 20.93 C 8.25 19.82 5 15.65 5 11 L 5 6.3 L 12 3.19 L 19 6.3 L 19 11 C 19 15.65 15.75 19.82 12 20.93 Z M 16.59 7.58 L 10 14.17 L 7.41 11.59 L 6 13 L 10 17 L 18 9 L 16.59 7.58 Z" Fill="#1F2937" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
                                 <TextBlock Text="Audit Trail" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" VerticalAlignment="Center" />
@@ -132,19 +141,12 @@
             <!-- Topbar -->
             <Border Grid.Row="0" Background="White" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="20,15">
                 <Grid>
-                    <TextBlock Text="Barangay SK Management System" FontSize="16" FontWeight="SemiBold" Foreground="#4B5563" VerticalAlignment="Center" />
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!-- User Info -->
-                        <Border Background="#F3F4F6" CornerRadius="4" Padding="6" Margin="0,0,10,0">
-                            <Path Data="M 12 12 C 14.21 12 16 10.21 16 8 C 16 5.79 14.21 4 12 4 C 9.79 4 8 5.79 8 8 C 8 10.21 9.79 12 12 12 Z M 12 14 C 9.33 14 4 15.34 4 18 L 4 20 L 20 20 L 20 18 C 20 15.34 14.67 14 12 14 Z" Fill="#9CA3AF" Width="18" Height="18" Stretch="Uniform" />
-                        </Border>
                         <StackPanel Margin="0,0,15,0" VerticalAlignment="Center">
-                            <TextBlock Text="SK Chairperson" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
+                            <TextBlock Text="Lastname, Name" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
                             <TextBlock Text="SK Chairperson" FontSize="12" Foreground="#9CA3AF" HorizontalAlignment="Right" />
                         </StackPanel>
-
-                        <Border BorderBrush="#E5E7EB" BorderThickness="1,0,0,0" Margin="5,4,15,4" />
 
                         <Button Background="White" BorderBrush="#D1D5DB" BorderThickness="1" Padding="12,6" Cursor="Hand" VerticalAlignment="Center">
                             <Button.Resources>

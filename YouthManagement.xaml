@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SK_System"
         mc:Ignorable="d"
-        Title="Youth Management" Height="768" Width="1200"
+        Title="Youth Management" Height="768" Width="1366"
         WindowStartupLocation="CenterScreen"
         FontFamily="Segoe UI"
         Background="#F9FAFB">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DataGridStyles.xaml"/>
+                <ResourceDictionary Source="WindowTemplateStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,12 +37,12 @@
 
                 <!-- Sidebar Header -->
                 <StackPanel Grid.Row="0" Margin="20,20,20,10">
-                    <TextBlock Text="SK Management" FontSize="18" FontWeight="SemiBold" Foreground="#1F2937" />
-                    <TextBlock Text="Barangay System" FontSize="13" Foreground="#9CA3AF" Margin="0,2,0,0" />
+                    <TextBlock Text="Barangay SK" FontSize="18" FontWeight="SemiBold" Foreground="#1F2937" />
+                    <TextBlock Text="Management System" FontSize="13" Foreground="#9CA3AF" Margin="0,2,0,0" />
                 </StackPanel>
 
                 <Border Grid.Row="1" BorderBrush="#E5E7EB" BorderThickness="0,1,0,1" Margin="0,10,0,0" Padding="20,15">
-                    <Border Background="#374151" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
+                    <Border Background="#FF002B6F" CornerRadius="4" Padding="10,6" HorizontalAlignment="Left">
                         <TextBlock Text="SK Chairperson" Foreground="White" FontSize="12" FontWeight="SemiBold" />
                     </Border>
                 </Border>
@@ -58,7 +67,7 @@
                         </Border>
 
                         <!-- Youth Management (Active) -->
-                        <Border Background="#E5E7EB" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
+                        <Border Background="#FFA4BEF1" BorderBrush="#D1D5DB" BorderThickness="4,0,0,0" Padding="16,12">
                             <StackPanel Orientation="Horizontal">
                                 <Path Data="M 16 11 C 17.66 11 18.99 9.66 18.99 8 C 18.99 6.34 17.66 5 16 5 C 14.34 5 13 6.34 13 8 C 13 9.66 14.34 11 16 11 Z M 8 11 C 9.66 11 10.99 9.66 10.99 8 C 10.99 6.34 9.66 5 8 5 C 6.34 5 5 6.34 5 8 C 5 9.66 6.34 11 8 11 Z M 8 13 C 5.67 13 1 14.17 1 16.5 L 1 19 L 15 19 L 15 16.5 C 15 14.17 10.33 13 8 13 Z M 16 13 C 15.71 13 15.38 13.02 15.03 13.05 C 16.19 13.89 17 15.02 17 16.5 L 17 19 L 23 19 L 23 16.5 C 23 14.17 18.33 13 16 13 Z" Fill="#1F2937" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0"/>
                                 <TextBlock Text="Youth Management" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" VerticalAlignment="Center" />
@@ -132,19 +141,12 @@
             <!-- Topbar -->
             <Border Grid.Row="0" Background="White" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="20,15">
                 <Grid>
-                    <TextBlock Text="Barangay SK Management System" FontSize="16" FontWeight="SemiBold" Foreground="#4B5563" VerticalAlignment="Center" />
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!-- User Info -->
-                        <Border Background="#F3F4F6" CornerRadius="4" Padding="6" Margin="0,0,10,0">
-                            <Path Data="M 12 12 C 14.21 12 16 10.21 16 8 C 16 5.79 14.21 4 12 4 C 9.79 4 8 5.79 8 8 C 8 10.21 9.79 12 12 12 Z M 12 14 C 9.33 14 4 15.34 4 18 L 4 20 L 20 20 L 20 18 C 20 15.34 14.67 14 12 14 Z" Fill="#9CA3AF" Width="18" Height="18" Stretch="Uniform" />
-                        </Border>
                         <StackPanel Margin="0,0,15,0" VerticalAlignment="Center">
-                            <TextBlock Text="SK Chairperson" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
+                            <TextBlock Text="Lastname, Name" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" HorizontalAlignment="Right" />
                             <TextBlock Text="SK Chairperson" FontSize="12" Foreground="#9CA3AF" HorizontalAlignment="Right" />
                         </StackPanel>
-
-                        <Border BorderBrush="#E5E7EB" BorderThickness="1,0,0,0" Margin="5,4,15,4" />
 
                         <Button Background="White" BorderBrush="#D1D5DB" BorderThickness="1" Padding="12,6" Cursor="Hand" VerticalAlignment="Center">
                             <Button.Resources>
@@ -190,45 +192,74 @@
                                     <Grid>
                                         <StackPanel Orientation="Horizontal">
                                             <Path Data="M 15.5 14 L 14.71 14 L 14.43 13.73 C 15.41 12.59 16 11.11 16 9.5 C 16 5.91 13.09 3 9.5 3 C 5.91 3 3 5.91 3 9.5 C 3 13.09 5.91 16 9.5 16 C 11.11 16 12.59 15.41 13.73 14.43 L 14 14.71 L 14 15.5 L 19 20.49 L 20.49 19 L 15.5 14 Z M 9.5 14 C 7.01 14 5 11.99 5 9.5 C 5 7.01 7.01 5 9.5 5 C 11.99 5 14 7.01 14 9.5 C 14 11.99 11.99 14 9.5 14 Z" Fill="#D1D5DB" Width="16" Height="16" Stretch="Uniform" Margin="0,0,12,0" VerticalAlignment="Center"/>
-                                            <TextBox Text="Search youth members by name..." Foreground="#D1D5DB" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" FontSize="14" Width="200" Padding="0"/>
+                                            <TextBox Name="SearchBox" Text="Search youth members by name..." Foreground="#D1D5DB" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" FontSize="14" Width="200" Padding="0"/>
                                         </StackPanel>
-                                        <TextBlock Text="7 results" Foreground="#D1D5DB" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <TextBlock Name="ResultsCountText" Text="7 results" Foreground="#D1D5DB" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                     </Grid>
                                 </Border>
 
-                                <!-- Table Layout (Empty visual mapping without grid data as requested in previous logic, but structured like mock) -->
-                                <!-- Column Headers -->
-                                <Border Background="#F9FAFB" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Padding="16,12">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30" />
-                                            <ColumnDefinition Width="1.5*" />
-                                            <ColumnDefinition Width="0.6*" />
-                                            <ColumnDefinition Width="0.8*" />
-                                            <ColumnDefinition Width="2*" />
-                                            <ColumnDefinition Width="1.2*" />
-                                        </Grid.ColumnDefinitions>
-
-                                        <TextBlock Grid.Column="0" Text="#" FontSize="12" FontWeight="SemiBold" Foreground="#9CA3AF" />
-                                        <TextBlock Grid.Column="1" Text="Full Name" FontSize="12" FontWeight="SemiBold" Foreground="#6B7280" />
-                                        <TextBlock Grid.Column="2" Text="Age" FontSize="12" FontWeight="SemiBold" Foreground="#6B7280" />
-                                        <TextBlock Grid.Column="3" Text="Gender" FontSize="12" FontWeight="SemiBold" Foreground="#6B7280" />
-                                        <TextBlock Grid.Column="4" Text="Address" FontSize="12" FontWeight="SemiBold" Foreground="#6B7280" />
-                                        <TextBlock Grid.Column="5" Text="Contact" FontSize="12" FontWeight="SemiBold" Foreground="#6B7280" />
-                                    </Grid>
-                                </Border>
-
-                                <!-- Table rows placeholders -->
-                                <DataGrid Height="480" AutoGenerateColumns="False" HeadersVisibility="None" 
-                                          Background="White" BorderThickness="0" RowBackground="White" 
-                                          GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#F3F4F6">
+                                <!-- Youth DataGrid -->
+                                <DataGrid Name="YouthDataGrid" Height="480" Style="{StaticResource ProfessionalDataGridStyle}" 
+                                          SelectionChanged="DataGrid_SelectionChanged" MouseDoubleClick="DataGrid_MouseDoubleClick">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Width="30" />
-                                        <DataGridTextColumn Width="1.5*" />
-                                        <DataGridTextColumn Width="0.6*" />
-                                        <DataGridTextColumn Width="0.8*" />
-                                        <DataGridTextColumn Width="2*" />
-                                        <DataGridTextColumn Width="1.2*" />
+                                        <!-- Row Number Column -->
+                                        <DataGridTextColumn Header="#" Binding="{Binding RowNumber}" Width="30" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="#9CA3AF"/>
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Full Name Column -->
+                                        <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" Width="1.5*" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Age Column -->
+                                        <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="0.6*" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Gender Column -->
+                                        <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" Width="0.8*" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Address Column -->
+                                        <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="2*" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                    <Setter Property="Foreground" Value="#6B7280"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Contact Column -->
+                                        <DataGridTextColumn Header="Contact" Binding="{Binding Contact}" Width="1.2*" IsReadOnly="True">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                    <Setter Property="Foreground" Value="#6B7280"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </StackPanel>
